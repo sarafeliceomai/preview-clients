@@ -1,119 +1,169 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Nuova Edil Costruzioni | Anteprima Restyling</title>
+    <title>Nuova Edil Costruzioni | Eccellenza dal 1978</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f2f8ff',
+                            100: '#e6f0ff',
+                            500: '#0055ff',
+                            900: '#001a4d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #f4f7f6; color: #333; line-height: 1.6; }
-        .preview-banner { background: #ff4757; color: white; text-align: center; padding: 10px; font-weight: bold; font-size: 0.9em; position: sticky; top: 0; z-index: 100; }
-        header { background: #fff; padding: 20px 5vw; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        header h1 { margin: 0; font-size: 1.5em; color: #2f3542; }
-        .btn-call { background: #2ed573; color: white; padding: 12px 25px; text-decoration: none; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 15px rgba(46, 213, 115, 0.3); transition: transform 0.2s; }
-        .btn-call:hover { transform: scale(1.05); }
-        .hero { background: linear-gradient(rgba(47, 53, 66, 0.9), rgba(47, 53, 66, 0.7)), url('https://www.nuovaedilcostruzioni.com/wp-content/uploads/2022/12/Losanna-7-1024x683.jpeg') center/cover; color: white; padding: 100px 5vw; text-align: center; }
-        .hero h2 { font-size: 3em; margin: 0 0 20px; font-weight: 800; line-height: 1.2; }
-        .hero p { font-size: 1.2em; max-width: 800px; margin: 0 auto 40px; color: #ced6e0; }
-        .about-section { padding: 80px 5vw; display: flex; gap: 50px; align-items: center; background: white; }
-        .about-text { flex: 1; }
-        .about-text h2 { color: #1e90ff; font-size: 2.2em; margin-top: 0; }
-        .about-images { flex: 1; display: flex; gap: 20px; }
-        .about-images img { width: 100%; max-width: 300px; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); object-fit: cover; }
-        .services { padding: 80px 5vw; background: #f4f7f6; text-align: center; }
-        .services h2 { font-size: 2.5em; margin-bottom: 40px; color: #2f3542; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .service-card { background: white; padding: 40px 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .service-card h3 { color: #1e90ff; }
-        .trust-badges { display: flex; justify-content: center; gap: 40px; padding: 60px 5vw; background: white; flex-wrap: wrap; }
-        .badge { text-align: center; width: 250px; }
-        .badge .icon { font-size: 3em; margin-bottom: 15px; }
-        .badge h3 { color: #2f3542; margin-bottom: 10px; }
-        .form-section { padding: 80px 5vw; text-align: center; background: #2f3542; color: white; }
-        .form-section h2 { font-size: 2.5em; margin-bottom: 40px; }
-        form { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; }
-        input, textarea, button { padding: 15px; border: 1px solid #dfe4ea; border-radius: 8px; font-size: 1em; font-family: inherit; }
-        button { background: #1e90ff; color: white; border: none; font-weight: bold; cursor: pointer; font-size: 1.1em; transition: background 0.2s; }
-        button:hover { background: #3742fa; }
-        footer { background: #1e272e; color: #808e9b; text-align: center; padding: 40px; font-size: 0.9em; }
+        .glass { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+        .hero-bg { background-image: linear-gradient(to right, rgba(0, 26, 77, 0.95), rgba(0, 26, 77, 0.5)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; background-attachment: fixed; }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-<body>
-    <div class="preview-banner">⚠️ MOCKUP PRIVATO - Generato utilizzando i dati reali estratti dal vecchio sito di Nuova Edil Costruzioni.</div>
-    <header>
-        <h1>Nuova Edil Costruzioni</h1>
-        <a href="tel:0287238167" class="btn-call">📞 Chiama Ora</a>
-    </header>
-    
-    <section class="hero">
-        <h2>Impresa Edile Milano Ristrutturazioni Nuova Edil Costruzioni</h2>
-        <p>Nuova Edil Costruzioni 1978 impresa edile Milano, specializzata nelle costruzioni e ristrutturazioni edili Civili e Industriali, con particolare atten...</p>
-        <a href="#preventivo" class="btn-call" style="background: #1e90ff;">Richiedi Sopralluogo Gratuito</a>
-    </section>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-brand-500 selection:text-white">
 
-    <section class="about-section">
-        <div class="about-text">
-            <h2>Chi Siamo: Dal 1978</h2>
-            <p>Nuova Edil Costruzioni 1978 impresa edile Milano, specializzata nelle costruzioni e ristrutturazioni edili Civili e Industriali, con particolare attenzione nella progettazione e ristrutturazioni edili d’interni di qualità per bagni, appartamenti, case, ville e cucine. Impresa Edile fondata a Milano da oltre trenta anni di generazione in generazione da padre a figli. Grazie ai nostri clienti che ci scelgono, possiamo ad oggi considerarci tra le migliori Imprese edili a Milano.</p>
-            <p>Siamo anche al servizio di ristrutturazioni edili di negozi, uffici, vecchie strutture. Applichiamo restauro conservativo di edifici artistici, con formula chiavi in mano.</p>
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-serif font-bold text-brand-900 tracking-tight">
+                Nuova Edil<span class="text-brand-500">.</span>
+            </div>
+            <a href="tel:0287238167" class="bg-brand-900 text-white px-8 py-3 rounded-full font-semibold hover:bg-brand-500 transition-all duration-300 shadow-lg hover:shadow-brand-500/30 transform hover:-translate-y-0.5">
+                Chiama: 02 8723 8167
+            </a>
         </div>
-        <div class="about-images">
-            <img src="https://www.nuovaedilcostruzioni.com/wp-content/uploads/2022/12/ristrutturazione_interni_roma_cantiere_demolizione_ingresso.jpg" alt="Cantiere">
-            <img src="https://www.nuovaedilcostruzioni.com/wp-content/uploads/2022/12/Cenisio-mono-5-1024x683.jpeg" alt="Ristrutturazione">
-        </div>
-    </section>
+    </nav>
 
-    <section class="services">
-        <h2>I Nostri Servizi Principali</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Progettazione d'Interni</h3>
-                <p>Curiamo il design e l'architettura dei tuoi spazi, dalla carta al cantiere, con l'ausilio di architetti e geometri esperti.</p>
-            </div>
-            <div class="service-card">
-                <h3>Ristrutturazione Chiavi in Mano</h3>
-                <p>Bagni, cucine, appartamenti e ville. Pensiamo a tutto noi: muratori, idraulici, elettricisti, e certificazioni a norma di legge.</p>
-            </div>
-            <div class="service-card">
-                <h3>Arredamento & Showroom</h3>
-                <p>Disponiamo di una sala mostra per selezionare insieme i migliori materiali e prodotti rigorosamente Made in Italy.</p>
+    <!-- Hero -->
+    <section class="hero-bg min-h-screen flex items-center pt-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-brand-900/20 mix-blend-multiply"></div>
+        <div class="max-w-7xl mx-auto px-6 py-24 w-full relative z-10">
+            <div class="max-w-3xl reveal active">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-white/10 text-brand-50 font-medium text-sm mb-6 border border-white/20 backdrop-blur-md">
+                    Milano • Costruzioni e Ristrutturazioni dal 1978
+                </div>
+                <h1 class="text-5xl md:text-7xl font-serif font-bold text-white leading-[1.1] mb-8">
+                    Progettiamo il tuo <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-brand-100">spazio perfetto.</span>
+                </h1>
+                <p class="text-xl text-gray-300 mb-10 font-light leading-relaxed max-w-2xl">
+                    Da oltre trent'anni trasformiamo case, ville e spazi commerciali. Un solo referente, zero pensieri, dal progetto su carta fino alla consegna delle chiavi.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#contatti" class="bg-brand-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-brand-900 transition-all duration-300 shadow-[0_0_20px_rgba(0,85,255,0.4)]">
+                        Richiedi Sopralluogo
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="trust-badges">
-        <div class="badge">
-            <div class="icon">📑</div>
-            <h3>Certificazione DURC</h3>
-        </div>
-        <div class="badge">
-            <div class="icon">💰</div>
-            <h3>Detrazioni 50%-65%</h3>
-        </div>
-        <div class="badge">
-            <div class="icon">⭐</div>
-            <h3>Materiali Premium</h3>
+    <!-- Servizi -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-20 reveal">
+                <h2 class="text-brand-500 font-bold tracking-widest uppercase text-sm mb-3">Le Nostre Competenze</h2>
+                <h3 class="text-4xl font-serif font-bold text-brand-900">Soluzioni Edili a 360°</h3>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Card 1 -->
+                <div class="group cursor-pointer reveal">
+                    <div class="overflow-hidden rounded-2xl mb-6 shadow-xl aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ristrutturazioni" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700">
+                    </div>
+                    <h4 class="text-2xl font-serif font-bold text-gray-900 mb-3 group-hover:text-brand-500 transition">Ristrutturazioni d'Interni</h4>
+                    <p class="text-gray-600 leading-relaxed">Architetti, muratori, impiantisti: il nostro team gestisce ogni fase del rinnovamento del tuo immobile con certificazioni a norma di legge.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="group cursor-pointer reveal" style="transition-delay: 100ms;">
+                    <div class="overflow-hidden rounded-2xl mb-6 shadow-xl aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nuove Costruzioni" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700">
+                    </div>
+                    <h4 class="text-2xl font-serif font-bold text-gray-900 mb-3 group-hover:text-brand-500 transition">Nuove Costruzioni</h4>
+                    <p class="text-gray-600 leading-relaxed">Costruzioni civili e industriali. Dalle fondamenta al tetto, utilizziamo materiali Made in Italy di altissima qualità.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group cursor-pointer reveal" style="transition-delay: 200ms;">
+                    <div class="overflow-hidden rounded-2xl mb-6 shadow-xl aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Showroom" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700">
+                    </div>
+                    <h4 class="text-2xl font-serif font-bold text-gray-900 mb-3 group-hover:text-brand-500 transition">Showroom Arredamento</h4>
+                    <p class="text-gray-600 leading-relaxed">Vieni a trovarci in Via A. Tadino, Milano. Selezioniamo insieme le migliori finiture, dai pavimenti all'arredo bagno.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="preventivo" class="form-section">
-        <h2>Ottieni un Preventivo in 24h</h2>
-        <form>
-            <input type="text" placeholder="Nome e Cognome" disabled>
-            <input type="tel" placeholder="Numero di Telefono" disabled>
-            <textarea placeholder="Descrivi brevemente il tuo progetto di ristrutturazione..." rows="4" disabled></textarea>
-            <button type="button" disabled>Invia Richiesta (Simulazione)</button>
-        </form>
+    <!-- Stats / Trust -->
+    <section class="py-20 bg-brand-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10 text-center relative z-10 reveal">
+            <div>
+                <div class="text-5xl font-serif font-bold text-brand-500 mb-2">30+</div>
+                <div class="text-gray-300 font-medium tracking-wide">Anni di Esperienza</div>
+            </div>
+            <div>
+                <div class="text-5xl font-serif font-bold text-brand-500 mb-2">100%</div>
+                <div class="text-gray-300 font-medium tracking-wide">Chiavi in Mano</div>
+            </div>
+            <div>
+                <div class="text-5xl font-serif font-bold text-brand-500 mb-2">1°</div>
+                <div class="text-gray-300 font-medium tracking-wide">Sopralluogo Gratuito</div>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p>© 2025 Nuova Edil Costruzioni 1978
-REA: MI – 2123433
-CAPITALE SOCIALE:
-€ 10.000,00
-P.Iva C.F. n° 09939410966</p>
-        <p>Email: info@nuovaedilcostruzioni.com | Telefono: 02 8723 8167</p>
-        <p><small>Sito ricostruito in automatico da Synapse Studio per dimostrazione commerciale.</small></p>
+    <!-- CTA Finale -->
+    <section id="contatti" class="py-24 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6 text-center reveal">
+            <h2 class="text-4xl font-serif font-bold text-gray-900 mb-6">Pronto a dare vita al tuo progetto?</h2>
+            <p class="text-xl text-gray-600 mb-10">Contattaci per discutere le tue idee e ricevere una consulenza dedicata dai nostri architetti.</p>
+            
+            <div class="bg-white p-10 rounded-3xl shadow-2xl">
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input type="text" placeholder="Il tuo Nome" class="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 transition" disabled>
+                    <input type="tel" placeholder="Numero di Telefono" class="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 transition" disabled>
+                    <textarea placeholder="Parlaci del tuo progetto..." rows="4" class="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 transition md:col-span-2" disabled></textarea>
+                    <button type="button" class="w-full bg-brand-900 text-white font-bold py-4 rounded-xl hover:bg-brand-500 transition duration-300 md:col-span-2 shadow-lg" disabled>Invia Richiesta</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 text-center text-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="mb-4 text-white text-lg font-serif">Nuova Edil Costruzioni 1978</p>
+            <p>Via A. Tadino, 45, Milano | Tel: 02 8723 8167 | info@nuovaedilcostruzioni.com</p>
+            <p class="mt-8 opacity-50">&copy; 2026. Design generato da Synapse Studio AI.</p>
+        </div>
     </footer>
+
+    <script>
+        // Animazioni Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
